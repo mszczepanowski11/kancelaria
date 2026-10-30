@@ -1,0 +1,12 @@
+<x-layouts.app>
+    @include('sections.hero')
+    @include('sections.promises')
+    @include('sections.about')
+    @include('sections.method')
+    @include('sections.services')
+    @include('sections.case-studies')
+    @include('sections.testimonials')
+    @include('sections.process')
+    @include('sections.pricing')
+    @include('sections.contact')
+</x-layouts.app>
