@@ -8,6 +8,11 @@ return [
 
     'mail_to' => env('SITE_MAIL_TO', 'p.pietrolaj@kancelaria-pietrolaj.pl'),
     'gtm_id' => env('GTM_ID', ''),
+    'trustindex_id' => env('TRUSTINDEX_ID', 'f93b2868438779330e160a4b485'),
+    'google_places' => [
+        'key' => env('GOOGLE_PLACES_KEY'),
+        'place_id' => env('GOOGLE_PLACE_ID'),
+    ],
     'google_reviews' => env('GOOGLE_REVIEWS_URL', 'https://www.google.com/maps/search/?api=1&query=Kancelaria%20Adwokacka%20Piotr%20Pietro%C5%82aj%20Krak%C3%B3w'),
 
     'phone' => '+48608358731',
@@ -54,7 +59,7 @@ return [
             ['Odzyskana nieruchomość', 'Klientem była gmina, której nieruchomość posiadała osoba bez umowy. Po latach procesu nieruchomość wróciła do gminy.'],
         ],
 
-        // Cytaty z Google - pisownia oryginalna.
+        // Opinie zapasowe (gdy brak klucza Google lub błąd API) - pisownia oryginalna.
         'testimonials' => [
             'Skorzystałam z porady prawnej pana Piotra.Jestem pod wielkim wrażeniem wysokiej kultury osobistej..ogromnej wiedzy oraz jasnych odpowiedzi na stawiane pytania .Otrzymana porada była merytoryczną i wnikliwa .Polecam wszystkim .którzy poszukują porady .która nie jest ograniczona czasowo a prawnik jest osobą o dużej empatii',
             'Dzięki wspólnemu przegadaniu tematu z prawnikiem udało nam się wygrać sprawę, mega plus za pokazanie różnych słabych stron tej sprawy, które pozwoliły lepiej przygotować się do sytuacji. Mega doceniam możliwość kontaktu poza spotkaniem i porady prawne.',

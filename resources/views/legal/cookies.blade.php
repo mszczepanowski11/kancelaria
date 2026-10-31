@@ -12,6 +12,9 @@
         ['c4', 'Mapa Google', [
             'Mapa w sekcji Kontakt pochodzi z serwisu Google Maps, który może zapisywać własne pliki cookies. Ładujemy ją dopiero po wyrażeniu zgody lub po kliknięciu przycisku „Pokaż mapę”.',
         ]],
+        ['c4b', 'Opinie Trustindex', [
+            'Opinie z Google w sekcji Opinie Klientów wyświetla serwis Trustindex (Trustindex Kft.), który może zapisywać własne pliki cookies. Widget ładujemy dopiero po wyrażeniu zgody. Opinie pochodzą z wizytówki Google i nie są przez nas edytowane.',
+        ]],
         ['c5', 'Jak zmienić zgodę', [
             'Swoją decyzję możesz zmienić w każdej chwili za pomocą przycisku poniżej lub linku „Ustawienia cookies” w stopce strony. Możesz też usunąć pliki cookies w ustawieniach przeglądarki.',
         ]],

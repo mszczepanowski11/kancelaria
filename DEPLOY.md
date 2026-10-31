@@ -34,7 +34,8 @@ MAIL_FROM_NAME="Strona Kancelarii"
 
 SITE_MAIL_TO=p.pietrolaj@kancelaria-pietrolaj.pl
 GTM_ID=               # GTM-XXXXXXX, puste = brak statystyk
-GOOGLE_REVIEWS_URL=   # link do wizytówki Google
+GOOGLE_REVIEWS_URL=   # link do wizytówki Google (zapasowy)
+TRUSTINDEX_ID=        # kod z widgetu Trustindex (część po loader.js?), puste = opinie z config/site.php
 ```
 
 ## Lokalnie

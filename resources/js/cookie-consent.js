@@ -38,10 +38,47 @@ function loadMap() {
     });
 }
 
+function loadTrustindex() {
+    const box = document.querySelector('[data-trustindex]');
+    if (!box || box.dataset.loaded) return;
+    box.dataset.loaded = '1';
+    const slot = box.querySelector('.reviews__widget');
+    const s = document.createElement('script');
+    s.defer = true;
+    s.async = true;
+    s.src = `https://cdn.trustindex.io/loader.js?${encodeURIComponent(box.dataset.trustindex)}`;
+    s.onload = () => {
+        let tries = 0;
+        const kick = () => {
+            if (slot.querySelector('.ti-widget')) return;
+            const el = [...slot.querySelectorAll('div')].find((d) => d.contentHtml);
+            if (el && window.TrustindexWidget) {
+                if (Array.isArray(window.tiElementToWaitForActivity)) {
+                    window.tiElementToWaitForActivity = window.tiElementToWaitForActivity.filter((x) => x !== el);
+                }
+                try { new window.TrustindexWidget(null, el); } catch { /* widget narysuje się sam przy przewinięciu */ }
+                return;
+            }
+            if (++tries < 50) setTimeout(kick, 200);
+        };
+        kick();
+    };
+    slot.appendChild(s);
+    // Opinie statyczne znikają dopiero, gdy widget faktycznie się narysuje.
+    new MutationObserver((_, obs) => {
+        if (slot.querySelector('.ti-widget')) {
+            slot.hidden = false;
+            box.querySelector('.reviews__static')?.remove();
+            obs.disconnect();
+        }
+    }).observe(slot, { childList: true, subtree: true });
+}
+
 function apply(value) {
     if (value === 'all') {
         loadGTM();
         loadMap();
+        loadTrustindex();
     }
 }
 
